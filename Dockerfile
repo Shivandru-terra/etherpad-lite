@@ -110,6 +110,8 @@ RUN  \
         ${INSTALL_SOFFICE:+libreoffice openjdk8-jre libreoffice-common} && \
     rm -rf /var/cache/apk/*
 
+COPY --chown=etherpad:etherpad ./APIKEY.txt ${EP_DIR}/APIKEY.txt
+
 USER etherpad
 
 WORKDIR "${EP_DIR}"
@@ -201,6 +203,8 @@ COPY --chown=etherpad:etherpad ${SETTINGS} "${EP_DIR}"/settings.json
 # Fix group permissions
 # Note: For some reason increases image size from 257 to 334.
 # RUN chmod -R g=u .
+
+COPY --chown=etherpad:etherpad ./APIKEY.txt ${EP_DIR}/APIKEY.txt
 
 USER etherpad
 
