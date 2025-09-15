@@ -146,7 +146,7 @@ COPY --chown=etherpad:etherpad ./local_plugin[s] ./local_plugins/
 
 # RUN bash -c ./bin/installLocalPlugins.sh
 
-RUN chmod +x bin/installLocalPlugins.sh && \
+RUN chmod +x bin/*.sh && \
     ./bin/installLocalPlugins.sh && \
     ./bin/installDeps.sh
 
