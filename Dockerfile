@@ -110,8 +110,6 @@ RUN  \
         ${INSTALL_SOFFICE:+libreoffice openjdk8-jre libreoffice-common} && \
     rm -rf /var/cache/apk/*
 
-COPY --chown=etherpad:etherpad ./APIKEY.txt ${EP_DIR}/APIKEY.txt
-
 USER etherpad
 
 WORKDIR "${EP_DIR}"
@@ -204,12 +202,11 @@ COPY --chown=etherpad:etherpad ${SETTINGS} "${EP_DIR}"/settings.json
 # Note: For some reason increases image size from 257 to 334.
 # RUN chmod -R g=u .
 
-COPY --chown=etherpad:etherpad ./APIKEY.txt ${EP_DIR}/APIKEY.txt
-
 USER etherpad
 
 HEALTHCHECK --interval=5s --timeout=3s \
   CMD curl --silent http://localhost:9001/health | grep -E "pass|ok|up" > /dev/null || exit 1
 
 EXPOSE 9001
-CMD ["pnpm", "run", "prod"]
+ENTRYPOINT ["/bin/sh", "-c", "echo \"$ETHERPAD_API_KEY\" > /opt/etherpad-lite/APIKEY.txt && exec pnpm run prod"]
+# CMD ["pnpm", "run", "prod"]
