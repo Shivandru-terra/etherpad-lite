@@ -148,10 +148,17 @@ COPY --chown=etherpad:etherpad ./local_plugin[s] ./local_plugins/
 
 RUN chmod +x ./bin/installLocalPlugins.sh && ./bin/installLocalPlugins.sh
 
-RUN bin/installDeps.sh && \
-  if [ ! -z "${ETHERPAD_PLUGINS}" ] || [ ! -z "${ETHERPAD_GITHUB_PLUGINS}" ]; then \
-      pnpm run plugins i ${ETHERPAD_PLUGINS} ${ETHERPAD_GITHUB_PLUGINS:+--github ${ETHERPAD_GITHUB_PLUGINS}}; \
-  fi
+# RUN bin/installDeps.sh && \
+#   if [ ! -z "${ETHERPAD_PLUGINS}" ] || [ ! -z "${ETHERPAD_GITHUB_PLUGINS}" ]; then \
+#       pnpm run plugins i ${ETHERPAD_PLUGINS} ${ETHERPAD_GITHUB_PLUGINS:+--github ${ETHERPAD_GITHUB_PLUGINS}}; \
+#   fi
+
+RUN chmod +x bin/installDeps.sh && \
+    ./bin/installDeps.sh && \
+    if [ ! -z "${ETHERPAD_PLUGINS}" ] || [ ! -z "${ETHERPAD_GITHUB_PLUGINS}" ]; then \
+        pnpm run plugins i ${ETHERPAD_PLUGINS} ${ETHERPAD_GITHUB_PLUGINS:+--github ${ETHERPAD_GITHUB_PLUGINS}}; \
+    fi
+
 
 
 FROM build_${BUILD_ENV} AS production
