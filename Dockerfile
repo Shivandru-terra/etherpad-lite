@@ -146,7 +146,9 @@ COPY --chown=etherpad:etherpad ./local_plugin[s] ./local_plugins/
 
 # RUN bash -c ./bin/installLocalPlugins.sh
 
-RUN chmod +x ./bin/installLocalPlugins.sh && ./bin/installLocalPlugins.sh
+RUN chmod +x bin/installLocalPlugins.sh && \
+    ./bin/installLocalPlugins.sh && \
+    ./bin/installDeps.sh
 
 # RUN bin/installDeps.sh && \
 #   if [ ! -z "${ETHERPAD_PLUGINS}" ] || [ ! -z "${ETHERPAD_GITHUB_PLUGINS}" ]; then \
