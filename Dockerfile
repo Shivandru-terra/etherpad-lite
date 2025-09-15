@@ -118,6 +118,7 @@ WORKDIR "${EP_DIR}"
 COPY --chown=etherpad:etherpad ${SETTINGS} ./settings.json
 COPY --chown=etherpad:etherpad ./var ./var
 COPY --chown=etherpad:etherpad ./bin ./bin
+RUN chmod +x bin/*.sh
 COPY --chown=etherpad:etherpad ./pnpm-workspace.yaml ./package.json ./
 
 
@@ -145,6 +146,7 @@ COPY --chown=etherpad:etherpad --from=adminbuild /opt/etherpad-lite/src/static/o
 COPY --chown=etherpad:etherpad ./local_plugin[s] ./local_plugins/
 
 # RUN bash -c ./bin/installLocalPlugins.sh
+RUN ./bin/installLocalPlugins.sh
 
 RUN chmod +x bin/*.sh && \
     ./bin/installLocalPlugins.sh && \
@@ -179,13 +181,19 @@ COPY --chown=etherpad:etherpad --from=adminbuild /opt/etherpad-lite/src/static/o
 
 COPY --chown=etherpad:etherpad ./local_plugin[s] ./local_plugins/
 
-RUN bash -c ./bin/installLocalPlugins.sh
+# RUN bash -c ./bin/installLocalPlugins.sh
+RUN ./bin/installLocalPlugins.sh
 
-RUN bin/installDeps.sh && \
+RUN ./bin/installDeps.sh && \
   if [ ! -z "${ETHERPAD_PLUGINS}" ] || [ ! -z "${ETHERPAD_GITHUB_PLUGINS}" ]; then \
       pnpm run plugins i ${ETHERPAD_PLUGINS} ${ETHERPAD_GITHUB_PLUGINS:+--github ${ETHERPAD_GITHUB_PLUGINS}}; \
   fi && \
     pnpm store prune
+# RUN bin/installDeps.sh && \
+#   if [ ! -z "${ETHERPAD_PLUGINS}" ] || [ ! -z "${ETHERPAD_GITHUB_PLUGINS}" ]; then \
+#       pnpm run plugins i ${ETHERPAD_PLUGINS} ${ETHERPAD_GITHUB_PLUGINS:+--github ${ETHERPAD_GITHUB_PLUGINS}}; \
+#   fi && \
+#     pnpm store prune
 
 # Copy the configuration file.
 COPY --chown=etherpad:etherpad ${SETTINGS} "${EP_DIR}"/settings.json
