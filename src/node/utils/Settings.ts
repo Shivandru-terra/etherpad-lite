@@ -368,11 +368,18 @@ const settings: SettingsType = {
   /*
  * The Type of the database
  */
-  dbType: 'rustydb',
+  dbType: 'mysql',
   /**
    * This setting is passed with dbType to ueberDB to set up the database
    */
-  dbSettings: null,
+  dbSettings: {
+  user: 'etherpad_user',
+  host: '34.93.150.101', // Cloud SQL private/public IP
+  password: '@Terra1234',
+  database: 'etherpad_db',
+  port: 3306
+},
+  // dbSettings: null,
   /**
    * The default Text of a new pad
    */
@@ -501,7 +508,7 @@ const settings: SettingsType = {
   /**
    * Disable dump of objects preventing a clean exit
    */
-  dumpOnUncleanExit: false,
+  dumpOnUncleanExit: true,
   /**
    * Enable indentation on new lines
    */
