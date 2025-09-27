@@ -205,7 +205,7 @@ COPY --chown=etherpad:etherpad ${SETTINGS} "${EP_DIR}"/settings.json
 USER etherpad
 
 HEALTHCHECK --interval=5s --timeout=3s \
-  CMD curl --silent http://localhost:9001/health | grep -E "pass|ok|up" > /dev/null || exit 1
+  CMD curl --silent http://localhost:$PORT/health | grep -E "pass|ok|up" > /dev/null || exit 1
 
 EXPOSE 8080
 ENTRYPOINT ["/bin/sh", "-c", "echo \"$ETHERPAD_API_KEY\" > /opt/etherpad-lite/APIKEY.txt && exec pnpm run prod"]
