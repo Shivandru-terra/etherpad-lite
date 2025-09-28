@@ -162,7 +162,7 @@
    *    "port" : "/somepath/etherpad.socket", // <-- path to a Unix socket
    */
   "ip": "${IP:0.0.0.0}",
-  "port": "${PORT:8080}",
+  "port": "${PORT:9001}",
 
   /*
    * Option to hide/show the settings.json in admin page.
@@ -243,13 +243,13 @@
    * https://www.npmjs.com/package/ueberdb2
    */
 
-  "dbType": "${DB_TYPE:dirty}",
+  "dbType": "mysql",
   "dbSettings": {
-    "host":       "${DB_HOST:undefined}",
-    "port":       "${DB_PORT:undefined}",
-    "database":   "${DB_NAME:undefined}",
-    "user":       "${DB_USER:undefined}",
-    "password":   "${DB_PASS:undefined}",
+    "host":       "34.93.150.101",
+    "port":       3306,
+    "database":   "etherpad_db",
+    "user":       "etherpad_user",
+    "password":   "@Terra123",
     "charset":    "${DB_CHARSET:undefined}",
     "filename":   "${DB_FILENAME:var/dirty.db}",
     "collection": "${DB_COLLECTION:undefined}",

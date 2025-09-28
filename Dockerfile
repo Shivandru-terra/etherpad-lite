@@ -207,6 +207,6 @@ USER etherpad
 HEALTHCHECK --interval=5s --timeout=3s \
   CMD curl --silent http://localhost:$PORT/health | grep -E "pass|ok|up" > /dev/null || exit 1
 
-EXPOSE 8080
+EXPOSE 9001
 ENTRYPOINT ["/bin/sh", "-c", "echo \"$ETHERPAD_API_KEY\" > /opt/etherpad-lite/APIKEY.txt && exec pnpm run prod"]
 # CMD ["pnpm", "run", "prod"]
