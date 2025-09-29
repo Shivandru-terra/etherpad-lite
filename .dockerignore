@@ -27,3 +27,5 @@ src/node_modules
 admin/node_modules
 ui/node_modules
 node_modules
+**/node_modules
+
