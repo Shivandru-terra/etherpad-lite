@@ -122,8 +122,8 @@ importers:
         specifier: ^4.20.5
         version: 4.20.5
       ueberdb2:
-        specifier: ^5.0.15
-        version: 5.0.15
+        specifier: ^5.0.23
+        version: 5.0.23
     devDependencies:
       '@types/node':
         specifier: ^24.3.0
@@ -270,8 +270,8 @@ importers:
         specifier: 4.20.5
         version: 4.20.5
       ueberdb2:
-        specifier: ^5.0.15
-        version: 5.0.15
+        specifier: ^5.0.23
+        version: 5.0.23
       underscore:
         specifier: 1.13.7
         version: 1.13.7
@@ -3369,6 +3369,7 @@ packages:
   keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
     engines: {node: '>= 0.6'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -4518,8 +4519,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ueberdb2@5.0.15:
-    resolution: {integrity: sha512-aBHstZ4E40GjOOR46VlJ2LVjY7EAGYQsy/MeQ6ExyWSzxYQqCk6w/KIpsJ11bew/GR1e3S3I1FgGaLz0FSMyEQ==}
+  ueberdb2@5.0.23:
+    resolution: {integrity: sha512-nUz6WqulBI+YHjPd6lOpT1s7pJODS73oNhkTmvxsy38SVmwWQT9obq0e7ySUpn/9rCCcxcB46Hjvl+PpdqcKgQ==}
     engines: {node: '>=16.20.1'}
 
   uid-safe@2.1.5:
@@ -9289,7 +9290,7 @@ snapshots:
 
   typescript@5.9.2: {}
 
-  ueberdb2@5.0.15: {}
+  ueberdb2@5.0.23: {}
 
   uid-safe@2.1.5:
     dependencies:
