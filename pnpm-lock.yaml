@@ -231,8 +231,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7
       rate-limiter-flexible:
-        specifier: ^7.2.0
-        version: 7.2.0
+        specifier: ^9.1.0
+        version: 9.1.0
       rehype:
         specifier: ^13.0.2
         version: 13.0.2
@@ -811,6 +811,7 @@ packages:
   '@koa/router@14.0.0':
     resolution: {integrity: sha512-LBSu5K0qAaaQcXX/0WIB9PGDevyCxxpnc1uq13vV/CgObaVxuis5hKl3Eboq/8gcb6ebnkAStW9NB/Em2eYyFA==}
     engines: {node: '>= 20'}
+    deprecated: Please upgrade to v15 or higher. All reported bugs in this version are fixed in newer releases, dependencies have been updated, and security has been improved.
 
   '@napi-rs/wasm-runtime@0.2.8':
     resolution: {integrity: sha512-OBlgKdX7gin7OIq4fadsjpg+cp2ZphvAIKucHsNfTdJiqdOmOEwQd/bHi0VwNrcw5xpBJyUw6cK/QilCqy1BSg==}
@@ -3369,6 +3370,7 @@ packages:
   keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
     engines: {node: '>= 0.6'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -3887,8 +3889,8 @@ packages:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
     engines: {node: '>= 0.6'}
 
-  rate-limiter-flexible@7.2.0:
-    resolution: {integrity: sha512-hrf0vIS/WOBegnHg+uPXxsXhuQYlNGfZiCmK5Wgudb12xlZUhpv9yD23yp/EW6BKQosshqnIQRQV+r3jyfIGQg==}
+  rate-limiter-flexible@9.1.0:
+    resolution: {integrity: sha512-0jjTtKWlF4UnMLr64chsKfyQsRlT3lc6KXK2B+N8wPkw2+QMbYN6ft4jNnZuHfllKpk3R5Vr4g7EM+Ms8H1aBw==}
 
   raw-body@3.0.0:
     resolution: {integrity: sha512-RmkhL8CAyCRPXCE28MMH0z2PNWQBNk2Q09ZdxM9IOOXwxwZbN+qbWaatPkdkWIKL2ZVDImrN/pK5HTRz2PcS4g==}
@@ -4395,6 +4397,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
@@ -4747,6 +4750,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -8571,7 +8575,7 @@ snapshots:
 
   range-parser@1.2.1: {}
 
-  rate-limiter-flexible@7.2.0: {}
+  rate-limiter-flexible@9.1.0: {}
 
   raw-body@3.0.0:
     dependencies:
